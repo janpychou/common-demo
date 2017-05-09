@@ -61,7 +61,7 @@ public class UserAction {
             throw new RuntimeException(e);
         }
     }
-    
+
     public static String getAction(DateTime time) throws Exception
     {
         String IP = getRandomIp();
