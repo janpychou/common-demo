@@ -1,0 +1,13 @@
+{
+  "groupReadConfig": {
+    "pageIndex": 0,
+    "pageSize": 10000
+  },
+  "dataConfig": {
+    "hostAndPorts": "192.168.0.212:6379",
+    "clusterMode": false,
+    "type": "redis",
+    "groupId": "usergroup_SytG16Xfe"
+  }
+}
+
