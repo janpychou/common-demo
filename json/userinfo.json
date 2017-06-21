@@ -1,0 +1,70 @@
+{
+  "type": "lucene_supervisor",
+  "ioConfig": {
+    "topic": "user_info",
+    "replicas": 1,
+    "taskCount": 1,
+    "taskDuration": "P1D",
+    "useEarliestOffset": "true",
+    "consumerProperties": {
+      "bootstrap.servers": "192.168.0.220:9092,192.168.0.221:9092,192.168.0.222:9092"
+    }
+  },
+  "dataSchema": {
+    "parser": {
+      "type": "string",
+      "parseSpec": {
+        "format": "url",
+        "timestampSpec": {
+          "column": "create_time",
+          "format": "millis"
+        },
+        "dimensionsSpec": {
+          "dimensions": [
+            {
+              "name": "num",
+              "type": "int"
+            }, {
+              "name": "UserID",
+              "type": "string"
+            }, {
+              "name": "age",
+              "type": "int"
+            }, {
+              "name": "score",
+              "type": "float"
+            }, {
+              "name": "province",
+              "type": "string"
+            }, {
+              "name": "birthday",
+              "type": "date",
+              "format": "millis"
+            }, {
+              "name": "create_time",
+              "type": "date",
+              "format": "millis"
+            }
+          ],
+          "spatialDimensions": [],
+          "dimensionExclusions": []
+        }
+      }
+    },
+    "dataSource": "userinfo",
+    "metricsSpec": [],
+    "granularitySpec": {
+      "type": "uniform",
+      "queryGranularity": "NONE",
+      "segmentGranularity": "YEAR"
+    }
+  },
+  "tuningConfig": {
+    "type": "kafka",
+    "buildV9Directly": true,
+    "maxRowsInMemory": 500000,
+    "maxRowsPerSegment": 20000000,
+    "basePersistDirectory": "/data1/druid/storage/userinfo",
+    "intermediatePersistPeriod": "PT10M"
+  }
+}

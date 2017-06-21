@@ -1,0 +1,107 @@
+{
+  "type": "lucene_supervisor",
+  "ioConfig": {
+    "topic": "wuxianjiRT",
+    "replicas": 1,
+    "taskCount": 1,
+    "taskDuration": "P1D",
+    "useEarliestOffset": "true",
+    "consumerProperties": {
+      "bootstrap.servers": "192.168.0.213:9092,192.168.0.214:9092,192.168.0.216:9092"
+    }
+  },
+  "dataSchema": {
+    "parser": {
+      "type": "string",
+      "parseSpec": {
+        "format": "url",
+        "timestampSpec": {
+          "column": "EventDateTime",
+          "format": "millis"
+        },
+        "dimensionsSpec": {
+          "dimensions": [
+            {
+              "name": "IP",
+              "type": "string"
+            }, {
+              "name": "Nation",
+              "type": "string"
+            }, {
+              "name": "Province",
+              "type": "string"
+            }, {
+              "name": "City",
+              "type": "string"
+            }, {
+              "name": "Operator",
+              "type": "string"
+            }, {
+              "name": "Network",
+              "type": "string"
+            }, {
+              "name": "SystemName",
+              "type": "string"
+            }, {
+              "name": "SystemVersion",
+              "type": "string"
+            }, {
+              "name": "UserID",
+              "type": "string"
+            }, {
+              "name": "SessionID",
+              "type": "string"
+            }, {
+              "name": "ClientDeviceID",
+              "type": "string"
+            }, {
+              "name": "ClientDeviceBrand",
+              "type": "string"
+            }, {
+              "name": "ClientDeviceModel",
+              "type": "string"
+            }, {
+              "name": "ClientDeviceAgent",
+              "type": "string"
+            }, {
+              "name": "ClientDeviceVersion",
+              "type": "string"
+            }, {
+              "name": "OsScreen",
+              "type": "string"
+            }, {
+              "name": "EventDateTime",
+              "type": "string"
+            }, {
+              "name": "EventScreen",
+              "type": "string"
+            }, {
+              "name": "EventAction",
+              "type": "string"
+            }, {
+              "name": "EventLabel",
+              "type": "string"
+            }
+          ],
+          "spatialDimensions": [],
+          "dimensionExclusions": []
+        }
+      }
+    },
+    "dataSource": "wuxianjiRT",
+    "metricsSpec": [],
+    "granularitySpec": {
+      "type": "uniform",
+      "queryGranularity": "NONE",
+      "segmentGranularity": "DAY"
+    }
+  },
+  "tuningConfig": {
+    "type": "kafka",
+    "buildV9Directly": true,
+    "maxRowsInMemory": 500000,
+    "maxRowsPerSegment": 20000000,
+    "basePersistDirectory": "/data1/druid/storage/wuxianjiRT",
+    "intermediatePersistPeriod": "PT10M"
+  }
+}

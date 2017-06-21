@@ -1,0 +1,42 @@
+{
+	"type": "default_supervisor",
+	"dataSchema": {
+		"dataSource": "dynamic_test4",
+		"parser": {
+			"type": "standard",
+			"parseSpec": {
+				"format": "json",
+				"timestampSpec": {
+					"column": "d|the_date",
+					"format": "millis"
+				},
+				"dimensionsSpec": {
+					"dynamicDimension": true
+				}
+			}
+		},
+		"metricsSpec": [],
+		"granularitySpec": {
+			"type": "uniform",
+			"segmentGranularity": "DAY",
+			"queryGranularity": "NONE"
+		}
+	},
+	"tuningConfig": {
+		"type": "kafka",
+		"maxRowsInMemory": 500000,
+		"maxRowsPerSegment": 10000000,
+		"intermediatePersistPeriod": "PT10M",
+		"reportParseExceptions": true
+	},
+	"ioConfig": {
+		"topic": "dynamic_test4",
+		"consumerProperties": {
+			"bootstrap.servers": "192.168.0.220:9092,192.168.0.221:9092,192.168.0.222:9092"
+		},
+		"taskCount": 1,
+		"replicas": 1,
+		"taskDuration": "PT300S",
+		"useEarliestOffset": "false"
+	}
+}

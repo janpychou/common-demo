@@ -1,0 +1,176 @@
+{
+	"type": "lucene_supervisor",
+	"dataSchema": {
+		"dataSource": "com_rJjP97lgZ_project_r1e_oAhmbZ",
+		"parser": {
+			"type": "string",
+			"parseSpec": {
+				"format": "hive",
+				"columns": ["cookieid",
+				"user_id",
+				"referer",
+				"url",
+				"ua",
+				"sign",
+				"c_time",
+				"f_time",
+				"l_time",
+				"srcpage",
+				"landpage",
+				"ip_address",
+				"event_type",
+				"event_name",
+				"plat_type",
+				"srctype",
+				"engine",
+				"referer_channel",
+				"url_channel",
+				"searchword",
+				"dt"],
+				"multiColumns": [],
+				"featureSpec": {
+					
+				},
+				"mapSpecs": {
+					
+				},
+				"timestampSpec": {
+					"column": "c_time",
+					"format": "posix"
+				},
+				"dimensionsSpec": {
+					"dynamicDimension": false,
+					"dimensions": [{
+						"name": "cookieid",
+						"type": "string"
+					},
+					{
+						"name": "user_id",
+						"type": "string"
+					},
+					{
+						"name": "referer",
+						"type": "string"
+					},
+					{
+						"name": "url",
+						"type": "string"
+					},
+					{
+						"name": "ua",
+						"type": "string"
+					},
+					{
+						"name": "sign",
+						"type": "string"
+					},
+					{
+						"name": "f_time",
+						"type": "string"
+					},
+					{
+						"name": "l_time",
+						"type": "string"
+					},
+					{
+						"name": "srcpage",
+						"type": "string"
+					},
+					{
+						"name": "landpage",
+						"type": "string"
+					},
+					{
+						"name": "ip_address",
+						"type": "string"
+					},
+					{
+						"name": "event_type",
+						"type": "string"
+					},
+					{
+						"name": "event_name",
+						"type": "string"
+					},
+					{
+						"name": "plat_type",
+						"type": "string"
+					},
+					{
+						"name": "srctype",
+						"type": "string"
+					},
+					{
+						"name": "engine",
+						"type": "string"
+					},
+					{
+						"name": "referer_channel",
+						"type": "string"
+					},
+					{
+						"name": "url_channel",
+						"type": "string"
+					},
+					{
+						"name": "searchword",
+						"type": "string"
+					},
+					{
+						"name": "dt",
+						"type": "string"
+					}]
+				}
+			}
+		},
+		"metricsSpec": [],
+		"granularitySpec": {
+			"type": "uniform",
+			"segmentGranularity": "DAY",
+			"queryGranularity": {
+				"type": "none"
+			},
+			"intervals": null
+		}
+	},
+	"tuningConfig": {
+		"type": "kafka",
+		"maxRowsInMemory": 500000,
+		"maxRowsPerSegment": 20000000,
+		"intermediatePersistPeriod": "PT10M",
+		"basePersistDirectory": "/data1/druidio/var/tmp",
+		"maxPendingPersists": 0,
+		"indexSpec": {
+			"bitmap": {
+				"type": "concise"
+			},
+			"dimensionCompression": null,
+			"metricCompression": null
+		},
+		"buildV9Directly": false,
+		"reportParseExceptions": true,
+		"handoffConditionTimeout": 0,
+		"workerThreads": null,
+		"chatThreads": null,
+		"chatRetries": 8,
+		"httpTimeout": "PT10S",
+		"shutdownTimeout": "PT80S",
+		"maxWarmCount": 1,
+		"consumerThreadCount": 2
+	},
+	"ioConfig": {
+		"topic": "com_rJjP97lgZ_project_r1e_oAhmbZ",
+		"replicas": 1,
+		"taskCount": 1,
+		"taskDuration": "PT3600S",
+		"consumerProperties": {
+			"bootstrap.servers": "10.1.2.90:9092,10.1.2.91:9092,10.1.2.92:9092"
+		},
+		"startDelay": "PT5S",
+		"period": "PT30S",
+		"useEarliestOffset": true,
+		"completionTimeout": "PT1800S",
+		"lateMessageRejectionPeriod": null
+	},
+	"luceneWriterConfig": null
+}

@@ -1,0 +1,50 @@
+{
+    "type": "lucene_index_realtime",
+    "spec": {
+        "dataSchema": {
+            "metricsSpec": [],
+            "parser": {
+                "parseSpec": {
+                    "format": "csv",
+                    "timestampSpec": {"column": "ts","format": "yyyy-MM-dd"},
+                    "dimensionsSpec": {
+                        "dimensions": [
+                        {"name": "cardNum","type": "string"},
+                        {"name": "leftNode","type": "string"},
+                        {"name": "rightNode","type": "string"},
+                        {"name": "level","type": "int"},
+                        {"name": "profit","type": "float"}]
+                    },
+                    "listDelimiter": ",",
+                    "columns": ["ts","cardNum","leftNode","rightNode","level","profit"]
+                }
+            },
+            "granularitySpec": {
+                "intervals": ["2001-01-01/2020-01-01"],
+                "segmentGranularity": "YEAR",
+                "type": "uniform"
+            },
+            "dataSource": "com_HyoaKhQMl_project_r1U1FDLjg"
+        },
+        "ioConfig": {
+            "firehose": {
+                "type": "local",
+                "filter": "*.csv",
+                "baseDir": "/data1/tmp/druid/"
+            },
+            "type": "realtime"
+        },
+        "tuningConfig": {
+            "type": "realtime",
+            "basePersistDirectory": "/data1/tmp/task/storage/wxj",
+            "reportParseExceptions":true,
+            "rejectionPolicy": {
+                "type": "none"
+            },
+            "consumerThreadCount": 2
+        }
+    },
+    "context": {
+        "debug": true
+    }
+}

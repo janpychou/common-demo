@@ -1,0 +1,54 @@
+{
+	"type": "lucene_index_hadoop",
+	"spec": {
+		"dataSchema": {
+			"metricsSpec": [],
+			"parser": {
+				"parseSpec": {
+					"dimensionsSpec": {
+						"dimensionExclusions": [],
+						"spatialDimensions": [],
+						"dimensions": [{
+							"name": "name",
+							"type": "string"
+						},
+						{
+							"name": "title",
+							"type": "string"
+						},
+						{
+							"name": "alias",
+							"type": "string"
+						}]
+					},
+					"format": "json",
+					"timestampSpec": {
+						"column": "ts",
+						"format": "millis"
+					}
+				},
+				"type": "string"
+			},
+			"granularitySpec": {
+				"intervals": ["2016-08-08/2016-08-09"],
+				"segmentGranularity": "DAY",
+				"queryGranularity": "NONE",
+				"type": "uniform"
+			},
+			"dataSource": "test_druid_index"
+		},
+		"ioConfig": {
+			"inputSpec": {
+				"paths": "/test/zhongruan/druid/",
+				"type": "static"
+			},
+			"type": "hadoop"
+		},
+		"tuningConfig": {
+			"partitionsSpec": {
+				"numShards": 1
+			},
+			"type": "hadoop"
+		}
+	}
+}

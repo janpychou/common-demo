@@ -1,0 +1,655 @@
+{
+    "type": "lucene_index_realtime",
+    "spec": {
+        "dataSchema": {
+            "metricsSpec": [],
+            "parser": {
+                "parseSpec": {
+                    "format": "hive",
+                    "timestampSpec": {
+                        "column": "trigtime",
+                        "format": "yyyy-MM-dd HH:mm:ss.SSS"
+                    },
+                    "dimensionsSpec": {
+                        "dimensionExclusions": [],
+                        "spatialDimensions": [],
+                        "dimensions": [
+                            {
+                                "name": "inserttime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "uploadtime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "handletime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "machineid",
+                                "type": "string"
+                            },
+                            {
+                                "name": "devicever",
+                                "type": "string"
+                            },
+                            {
+                                "name": "osver",
+                                "type": "string"
+                            },
+                            {
+                                "name": "userid",
+                                "type": "string"
+                            },
+                            {
+                                "name": "username",
+                                "type": "string"
+                            },
+                            {
+                                "name": "sex",
+                                "type": "string"
+                            },
+                            {
+                                "name": "age",
+                                "type": "string"
+                            },
+                            {
+                                "name": "school",
+                                "type": "string"
+                            },
+                            {
+                                "name": "grade",
+                                "type": "string"
+                            },
+                            {
+                                "name": "gradetype",
+                                "type": "string"
+                            },
+                            {
+                                "name": "subjects",
+                                "type": "string"
+                            },
+                            {
+                                "name": "uploadip",
+                                "type": "string"
+                            },
+                            {
+                                "name": "province",
+                                "type": "string"
+                            },
+                            {
+                                "name": "city",
+                                "type": "string"
+                            },
+                            {
+                                "name": "operations",
+                                "type": "string"
+                            },
+                            {
+                                "name": "appid",
+                                "type": "string"
+                            },
+                            {
+                                "name": "appver",
+                                "type": "string"
+                            },
+                            {
+                                "name": "packagename",
+                                "type": "string"
+                            },
+                            {
+                                "name": "modulename",
+                                "type": "string"
+                            },
+                            {
+                                "name": "moduledetail",
+                                "type": "string"
+                            },
+                            {
+                                "name": "functionname",
+                                "type": "string"
+                            },
+                            {
+                                "name": "evtname",
+                                "type": "string"
+                            },
+                            {
+                                "name": "evttype",
+                                "type": "string"
+                            },
+                            {
+                                "name": "trigtime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "trigvalue",
+                                "type": "string"
+                            },
+                            {
+                                "name": "activityname",
+                                "type": "string"
+                            },
+                            {
+                                "name": "dataid",
+                                "type": "string"
+                            },
+                            {
+                                "name": "datatype",
+                                "type": "string"
+                            },
+                            {
+                                "name": "datatitle",
+                                "type": "string"
+                            },
+                            {
+                                "name": "datagrade",
+                                "type": "string"
+                            },
+                            {
+                                "name": "datasubject",
+                                "type": "string"
+                            },
+                            {
+                                "name": "datapublisher",
+                                "type": "string"
+                            },
+                            {
+                                "name": "dataedition",
+                                "type": "string"
+                            },
+                            {
+                                "name": "dataextend",
+                                "type": "string"
+                            },
+                            {
+                                "name": "extend",
+                                "type": "string"
+                            },
+                            {
+                                "name": "filetype",
+                                "type": "string"
+                            },
+                            {
+                                "name": "routermac",
+                                "type": "string"
+                            },
+                            {
+                                "name": "daver",
+                                "type": "string"
+                            },
+                            {
+                                "name": "brand",
+                                "type": "string"
+                            },
+                            {
+                                "name": "channelid",
+                                "type": "string"
+                            },
+                            {
+                                "name": "birthday",
+                                "type": "string"
+                            },
+                            {
+                                "name": "sessionid",
+                                "type": "string"
+                            },
+                            {
+                                "name": "phonenum",
+                                "type": "string"
+                            },
+                            {
+                                "name": "imei",
+                                "type": "string"
+                            },
+                            {
+                                "name": "partdate",
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    "columns": [
+                        "inserttime",
+                        "uploadtime",
+                        "handletime",
+                        "machineid",
+                        "devicever",
+                        "osver",
+                        "userid",
+                        "username",
+                        "sex",
+                        "age",
+                        "school",
+                        "grade",
+                        "gradetype",
+                        "subjects",
+                        "uploadip",
+                        "province",
+                        "city",
+                        "operations",
+                        "appid",
+                        "appver",
+                        "packagename",
+                        "modulename",
+                        "moduledetail",
+                        "functionname",
+                        "evtname",
+                        "evttype",
+                        "trigtime",
+                        "trigvalue",
+                        "activityname",
+                        "dataid",
+                        "datatype",
+                        "datatitle",
+                        "datagrade",
+                        "datasubject",
+                        "datapublisher",
+                        "dataedition",
+                        "dataextend",
+                        "extend",
+                        "filetype",
+                        "routermac",
+                        "daver",
+                        "brand",
+                        "channelid",
+                        "birthday",
+                        "sessionid",
+                        "phonenum",
+                        "imei",
+                        "partdate"
+                    ],
+                    "mapColumns": [
+                        "inserttime",
+                        "uploadtime",
+                        "handletime",
+                        "machineid",
+                        "devicever",
+                        "osver",
+                        "userid",
+                        "username",
+                        "sex",
+                        "age",
+                        "school",
+                        "grade",
+                        "gradetype",
+                        "subjects",
+                        "uploadip",
+                        "province",
+                        "city",
+                        "operations",
+                        "appid",
+                        "appver",
+                        "packagename",
+                        "modulename",
+                        "moduledetail",
+                        "functionname",
+                        "evtname",
+                        "evttype",
+                        "trigtime",
+                        "trigvalue",
+                        "activityname",
+                        "dataid",
+                        "datatype",
+                        "datatitle",
+                        "datagrade",
+                        "datasubject",
+                        "datapublisher",
+                        "dataedition",
+                        "dataextend",
+                        "extend",
+                        "filetype",
+                        "routermac",
+                        "daver",
+                        "brand",
+                        "channelid",
+                        "birthday",
+                        "sessionid",
+                        "phonenum",
+                        "imei",
+                        "partdate"
+                    ]
+                }
+            },
+            "granularitySpec": {
+                "intervals": [
+                    "2001-01-01/2020-01-01"
+                ],
+                "segmentGranularity": "DAY",
+                "queryGranularity": "NONE",
+                "type": "uniform"
+            },
+            "dataSource": "hiveFileTest"
+        },
+        "ioConfig": {
+            "firehose": {
+                "type": "local",
+                "filter": "*",
+                "baseDir": "/data/source_data",
+                "parser": {
+                    "parseSpec": {
+                        "format": "hive",
+                        "timestampSpec": {
+                            "column": "trigtime",
+                            "format": "yyyy-MM-dd HH:mm:ss.SSS"
+                        },
+                        "dimensionsSpec": {
+                            "dimensionExclusions": [],
+                            "spatialDimensions": [],
+                            "dimensions": [
+                                {
+                                    "name": "inserttime",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "uploadtime",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "handletime",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "machineid",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "devicever",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "osver",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "userid",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "username",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "sex",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "age",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "school",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "grade",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "gradetype",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "subjects",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "uploadip",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "province",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "city",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "operations",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "appid",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "appver",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "packagename",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "modulename",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "moduledetail",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "functionname",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "evtname",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "evttype",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "trigtime",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "trigvalue",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "activityname",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "dataid",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "datatype",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "datatitle",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "datagrade",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "datasubject",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "datapublisher",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "dataedition",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "dataextend",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "extend",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "filetype",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "routermac",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "daver",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "brand",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "channelid",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "birthday",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "sessionid",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "phonenum",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "imei",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "partdate",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "columns": [
+                            "inserttime",
+                            "uploadtime",
+                            "handletime",
+                            "machineid",
+                            "devicever",
+                            "osver",
+                            "userid",
+                            "username",
+                            "sex",
+                            "age",
+                            "school",
+                            "grade",
+                            "gradetype",
+                            "subjects",
+                            "uploadip",
+                            "province",
+                            "city",
+                            "operations",
+                            "appid",
+                            "appver",
+                            "packagename",
+                            "modulename",
+                            "moduledetail",
+                            "functionname",
+                            "evtname",
+                            "evttype",
+                            "trigtime",
+                            "trigvalue",
+                            "activityname",
+                            "dataid",
+                            "datatype",
+                            "datatitle",
+                            "datagrade",
+                            "datasubject",
+                            "datapublisher",
+                            "dataedition",
+                            "dataextend",
+                            "extend",
+                            "filetype",
+                            "routermac",
+                            "daver",
+                            "brand",
+                            "channelid",
+                            "birthday",
+                            "sessionid",
+                            "phonenum",
+                            "imei",
+                            "partdate"
+                        ],
+                        "mapColumns": [
+                            "inserttime",
+                            "uploadtime",
+                            "handletime",
+                            "machineid",
+                            "devicever",
+                            "osver",
+                            "userid",
+                            "username",
+                            "sex",
+                            "age",
+                            "school",
+                            "grade",
+                            "gradetype",
+                            "subjects",
+                            "uploadip",
+                            "province",
+                            "city",
+                            "operations",
+                            "appid",
+                            "appver",
+                            "packagename",
+                            "modulename",
+                            "moduledetail",
+                            "functionname",
+                            "evtname",
+                            "evttype",
+                            "trigtime",
+                            "trigvalue",
+                            "activityname",
+                            "dataid",
+                            "datatype",
+                            "datatitle",
+                            "datagrade",
+                            "datasubject",
+                            "datapublisher",
+                            "dataedition",
+                            "dataextend",
+                            "extend",
+                            "filetype",
+                            "routermac",
+                            "daver",
+                            "brand",
+                            "channelid",
+                            "birthday",
+                            "sessionid",
+                            "phonenum",
+                            "imei",
+                            "partdate"
+                        ]
+                    }
+                }
+            },
+            "type": "realtime"
+        },
+        "tuningConfig": {
+            "type": "realtime",
+            "maxRowsInMemory": 500000,
+            "intermediatePersistPeriod": "PT10M",
+            "basePersistDirectory": "/data/tmp/task/storage/bbk",
+            "windowPeriod": "PT6000M",
+            "reportParseExceptions": true,
+            "rejectionPolicy": {
+                "type": "none"
+            },
+            "buildV9Directly": true,
+            "consumerThreadCount": 2
+        }
+    },
+    "context": {
+        "debug": true
+    }
+}

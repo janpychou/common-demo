@@ -1,0 +1,74 @@
+{
+  "type": "lucene_supervisor",
+  "dataSchema": {
+    "dataSource": "bigdata",
+    "parser": {
+      "type": "string",
+      "parseSpec": {
+        "format": "url",
+        "timestampSpec": {
+          "column": "ts",
+          "format": "millis"
+        },
+        "dimensionsSpec": {
+          "dimensions": [
+            {
+              "name": "num",
+              "type": "int"
+            },    			
+            {
+              "name": "id",
+              "type": "string"
+            },    			
+            {
+              "name": "ele",
+              "type": "int"
+            },
+            {
+              "name": "eleCur",
+              "type": "float"
+            },
+            {
+              "name": "vol",
+              "type": "float"
+            },
+            {
+              "name": "area",
+              "type": "string"
+            },
+            {
+              "name": "province",
+              "type": "string"
+            }
+          ],
+          "dimensionExclusions": [],
+          "spatialDimensions": []
+        }
+      }
+    },
+    "metricsSpec": [],
+    "granularitySpec": {
+      "type": "uniform",
+      "segmentGranularity": "DAY",
+      "queryGranularity": "NONE"
+    }
+  },
+  "tuningConfig": {
+    "type": "kafka",
+    "maxRowsInMemory": 500000,
+    "maxRowsPerSegment": 50000000,
+    "basePersistDirectory": "/data4/druidTask/storage/bigdata"
+  },
+  "ioConfig": {
+    "topic": "bigdata",
+    "consumerProperties": {
+      "bootstrap.servers": "192.168.0.223:9092,192.168.0.224:9092,192.168.0.225:9092,192.168.0.226:9092,192.168.0.227:9092",
+      "retry.backoff.ms": 3000
+    },
+    "taskCount": 10,
+    "replicas": 1,
+    "taskDuration": "PT15M",
+    "useEarliestOffset": "true"
+  }
+}
+

@@ -1,0 +1,10 @@
+{
+	"type": "default_supervisor",
+	"dataSource":"meizumap",
+	"dimensionsSpec": {
+		"dynamicDimension": true
+	},
+	"ipLibSpec": {
+		"type": "none"
+	}
+}

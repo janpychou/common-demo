@@ -1,0 +1,91 @@
+{
+  "type": "lucene_supervisor",
+  "dataSchema": {
+    "dataSource": "com_SJ1B_Zq6e_project_S1FVMB5ag",
+    "parser": {
+			"parseSpec": {
+				"format": "nested",
+				"decollator": ".",
+				"parseSpec": {
+					"format": "regex",
+					"listDelimiter": " ",
+					"columns": ["logtype",
+					"timestamp",
+					"json"],
+					"dimensionsSpec": {
+						"dynamicDimension": false,
+						"dimensions": [],
+						"dimensionExclusions": []
+					},
+					"pattern": "^\\[([0-9a-z]+)\\] \\[(.*)\\] (.*)"
+				},
+				"dimensionParseSpec": {
+					"json": {
+						"format": "json",
+						"featureSpec": {
+							"ALLOW_UNQUOTED_CONTROL_CHARS": true
+						}
+					}
+				},
+				"timestampSpec": {
+					"column": "timestamp",
+					"format": "yyyy-MM-dd HH:mm:ss",
+					"timeZone": "+08:00"
+				},
+				"dimensionsSpec": {
+					"dynamicDimension": true,
+					"dimensions": [{
+						"type": "string",
+						"name": "logtype",
+						"hasMultipleValues": false
+					},
+					{
+						"type": "string",
+						"name": "json",
+						"hasMultipleValues": false
+					},
+					{
+						"type": "string",
+						"name": "json.exceptionName",
+						"hasMultipleValues": false
+					},
+					{
+						"type": "string",
+						"name": "json.exceptionLevel",
+						"hasMultipleValues": false
+					},
+					{
+						"type": "long",
+						"name": "json.code",
+						"hasMultipleValues": false
+					}],
+					"dimensionExclusions": []
+				}
+			}
+	},
+    "metricsSpec": [],
+    "granularitySpec": {
+      "type": "uniform",
+      "segmentGranularity": "HOUR",
+      "queryGranularity": "NONE"
+    }
+  },
+  "tuningConfig": {
+    "type": "kafka",
+    "maxRowsInMemory": 500000,
+    "maxRowsPerSegment": 20000000,
+    "intermediatePersistPeriod": "PT10M",
+    "basePersistDirectory": "/data1/tmp/storage/ten",
+    "buildV9Directly": true
+  },
+  "ioConfig": {
+    "topic": "com_SJ1B_Zq6e_project_S1FVMB5ag",
+    "consumerProperties": {
+      "bootstrap.servers": "10.9.181.193:9092"
+    },
+    "taskCount": 1,
+    "replicas": 1,
+    "taskDuration": "PT360S",
+    "useEarliestOffset": "true"
+  }
+}

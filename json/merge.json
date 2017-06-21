@@ -1,0 +1,6 @@
+{
+	"type": "lucene_merge",
+	"dataSource": "wuxianjiRT",
+	"mergeGranularity": "DAY",
+	"interval": "2017-03-01/2017-05-01"
+}

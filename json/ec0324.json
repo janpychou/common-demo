@@ -1,0 +1,136 @@
+{
+  "type": "lucene_supervisor",
+  "dataSchema": {
+    "dataSource": "ec",
+    "parser": {
+      "type": "string",
+      "parseSpec": {
+        "format": "url",
+        "timestampSpec": {
+          "column": "f_time",
+          "format": "millis"
+        },
+        "dimensionsSpec": {
+          "dimensions": [
+            {
+              "name": "f_corp_id",
+              "type": "string"
+            },    			
+            {
+              "name": "f_waste_id",
+              "type": "string"
+            },
+            {
+              "name": "f_money",
+              "type": "float"
+            },
+            {
+              "name": "f_type",
+              "type": "string"
+            },
+            {
+              "name": "f_callno",
+              "type": "string"
+            },
+            {
+              "name": "f_calltono",
+              "type": "string"
+            },
+            {
+              "name": "f_Starttime",
+              "type": "date"
+            },
+            {
+              "name": "f_Endtime",
+              "type": "date"
+            },
+            {
+              "name": "f_Calltime",
+              "type": "int"
+            },
+            {
+              "name": "f_status",
+              "type": "string"
+            },
+            {
+              "name": "f_num",
+              "type": "string"
+            },
+            {
+              "name": "f_result",
+              "type": "string"
+            },
+            {
+              "name": "f_user_id",
+              "type": "string"
+            },
+            {
+              "name": "f_is400",
+              "type": "string"
+            },
+            {
+              "name": "f_crm_log",
+              "type": "string"
+            },
+            {
+              "name": "f_code",
+              "type": "string"
+            },
+            {
+              "name": "f_path",
+              "type": "string"
+            },
+            {
+              "name": "f_crm_id",
+              "type": "string"
+            },
+            {
+              "name": "f_telbox_id",
+              "type": "string"
+            },
+            {
+              "name": "f_mp3_len",
+              "type": "int"
+            },
+            {
+              "name": "f_in_out_type",
+              "type": "string"
+            },
+            {
+              "name": "f_call_type",
+              "type": "string"
+            }
+          ],
+          "dimensionExclusions": [],
+          "spatialDimensions": []
+        }
+      }
+    },
+    "metricsSpec": [],
+    "granularitySpec": {
+      "type": "uniform",
+      "segmentGranularity": "MONTH",
+      "queryGranularity": "NONE"
+    }
+  },
+  "tuningConfig": {
+    "type": "kafka",
+    "maxRowsInMemory": 500000,
+    "maxRowsPerSegment": 20000000,
+    "reportParseExceptions": true,
+    "intermediatePersistPeriod": "PT10M",
+    "buildV9Directly": true
+  },
+  "ioConfig": {
+    "topic": "ec_sugo",
+    "consumerProperties": {
+      "bootstrap.servers": "192.168.0.215:9092,192.168.0.217:9092"
+    },
+    "taskCount": 1,
+    "replicas": 1,
+    "taskDuration": "PT3600S",
+    "useEarliestOffset": "true"
+  }
+}
+
+
