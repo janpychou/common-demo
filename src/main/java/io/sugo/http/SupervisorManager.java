@@ -92,6 +92,7 @@ public class SupervisorManager {
     servletHolder.setInitParameter("com.sun.jersey.config.property.resourceConfigClass", "com.sun.jersey.api.core.PackagesResourceConfig");
     servletHolder.setInitParameter("com.sun.jersey.config.property.packages", "io.sugo.http.resource");
     htmlHandler.addServlet(servletHolder, "/druid/indexer/v1/*");
+    htmlHandler.addServlet(servletHolder, "/druid/coordinator/v1/*");
     handlerList.addHandler(htmlHandler);
 
     server.setHandler(handlerList);
